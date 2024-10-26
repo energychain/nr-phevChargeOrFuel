@@ -1,0 +1,91 @@
+[
+    {
+        "id": "c418dbab4503935f",
+        "type": "tab",
+        "label": "PHEV Charge Or Fuel Demo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f68650401488f6f1",
+        "type": "inject",
+        "z": "c418dbab4503935f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "5b3374ba6160d7cd"
+            ]
+        ]
+    },
+    {
+        "id": "5b3374ba6160d7cd",
+        "type": "phevcof",
+        "z": "c418dbab4503935f",
+        "name": "Charge or Fuel?",
+        "zip": "69256",
+        "fuelConsumption": 6.8,
+        "evConsumption": 17.5,
+        "personaltoken": "",
+        "x": 480,
+        "y": 200,
+        "wires": [
+            [
+                "73ac89569bf4b3a4"
+            ],
+            [
+                "afdcf9d908ff0f7a"
+            ]
+        ]
+    },
+    {
+        "id": "73ac89569bf4b3a4",
+        "type": "debug",
+        "z": "c418dbab4503935f",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "afdcf9d908ff0f7a",
+        "type": "debug",
+        "z": "c418dbab4503935f",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 260,
+        "wires": []
+    }
+]

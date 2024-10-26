@@ -1,0 +1,40 @@
+{
+  "name": "nr-phevchargeorfuel",
+  "version": "1.0.0",
+  "description": "Node-RED Node to decide charge or fuel in Germany for PHEV drivers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energychain/nr-phevChargeOrFuel.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+ },
+  "keywords": [
+    "phev",
+    "node-red",
+    "chargeorfuel",
+    "energy",
+    "optimization",
+    "germany",
+    "stromdao"
+  ],
+  "node-red": {
+    "nodes": {
+      "co2meter": "phevcof.js"
+    },
+    "version": ">=4.0.0"
+  },
+  "author": "STROMDAO GmbH (dev@stromdao.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/energychain/nr-phevChargeOrFuel/issues"
+  },
+  "homepage": "https://github.com/energychain/nr-phevChargeOrFuel#readme",
+  "dependencies": {
+    "corrently-api": "^2.0.2"
+  }
+}

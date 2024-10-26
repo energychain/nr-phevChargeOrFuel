@@ -1,0 +1,67 @@
+<script type="text/javascript">
+    RED.nodes.registerType('phevcof',{
+        category: 'corrently',
+        color: '#e6b41e',
+        defaults: {
+            name: {value:""},
+            zip: {value:"10117",required:true},
+            fuelConsumption: { value: 6.8, required:true},
+            evConsumption: { value: 17.5, required:true},
+            personaltoken: {value:""}
+        },
+        inputs: 1,
+        outputs: 2,
+        icon: "white-globe.svg",
+        label: function() {
+            return this.name||"phevCoF";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="phevcof">
+    <div class="form-row">
+        <label for="node-input-zip"><i class="fa fa-tag"></i> Postal Code (Germany)</label>
+        <input type="text" id="node-input-zip" placeholder="(Postleitzahl)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-fuelConsumption"><i class="fa fa-tag"></i> Fuel consumption with empty Battery (l/100km)</label>
+        <input type="number" id="node-input-fuelConsumption" placeholder="(eq. 6.8)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-evConsumption"><i class="fa fa-tag"></i> Electricity consumption in pure EV Mode (kwh/100km)</label>
+        <input type="number" id="node-input-evConsumption" placeholder="(eq. 17.5)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-personaltoken"><i class="fa fa-tag"></i> API Token (<a href="https://console.corrently.io/?utm_source=nodered" target="_blank">Corrently Dev Console</a>)</label>
+        <input type="text" id="node-input-personaltoken" placeholder="Personal API Token">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="phevcof">
+    <p>Empowers users to make informed decisions that can save money and reduce their carbon footprint.</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">(ignored)</span>
+        </dt>
+        <dd>Payloaf is not used at the moment</dd>
+    </dl>
+    <h3>Output 1</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">boolean</span>
+        </dt>
+        <dd>True if Charging. False if fueling</dd>
+    </dl>
+    <h3>Output 2</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">Object</span>
+        </dt>
+        <dd>Full debug output as given by PHEV Charge Or Fuel API</dd>
+    </dl>
+</script>
